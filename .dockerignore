@@ -1,0 +1,45 @@
+# 依赖
+node_modules/
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# 构建产物
+dist/
+
+# 数据库 & 数据
+*.db
+*.db-wal
+*.db-shm
+data/
+
+# 环境变量
+.env
+.env.example
+backend/.env
+
+# 备份
+backup_*.json
+
+# Git
+.git/
+.gitignore
+
+# 编辑器 / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 日志
+*.log
+logs/
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
