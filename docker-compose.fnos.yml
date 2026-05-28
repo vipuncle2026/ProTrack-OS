@@ -15,7 +15,7 @@
 
 services:
   backend:
-    image: vipuncle2026/protrack-backend:latest
+    image: vipuncle8848/protrack-backend:latest
     container_name: protrack-backend
     environment:
       - SECRET_KEY=${SECRET_KEY:-protrack-change-me-in-production-use-env-file}
@@ -27,7 +27,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: vipuncle2026/protrack-frontend:latest
+    image: vipuncle8848/protrack-frontend:latest
     container_name: protrack-frontend
     ports:
       - "${PORT:-8088}:80"
