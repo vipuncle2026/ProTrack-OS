@@ -11,9 +11,9 @@ on:
   workflow_dispatch:  # 允许手动触发
 
 env:
-  DOCKER_USERNAME: vipuncle8848
-  BACKEND_IMAGE: vipuncle8848/protrack-backend
-  FRONTEND_IMAGE: vipuncle8848/protrack-frontend
+  DOCKER_USERNAME: appnew
+  BACKEND_IMAGE: appnew/protrack-backend
+  FRONTEND_IMAGE: appnew/protrack-frontend
 
 jobs:
   build:
