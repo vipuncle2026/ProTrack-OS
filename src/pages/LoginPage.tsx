@@ -4,7 +4,7 @@ import { Lock, User, Eye, EyeOff, AlertCircle, Check } from 'lucide-react';
 import { useStore } from '../store';
 import { authApi } from '../api';
 
-const REMEMBER_KEY = 'protrack_remembered_user';
+const REMEMBER_KEY = 'yingpan_remembered_user';
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -62,13 +62,15 @@ export const LoginPage: React.FC = () => {
       <div className="w-full max-w-md">
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-10">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-xl shadow-blue-500/30 mb-6">
-              <span className="text-white font-bold text-3xl">P</span>
+            {/* Logo 图标 */}
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-xl shadow-purple-500/30 mb-6">
+              <span className="text-white font-bold text-3xl">营</span>
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
-              ProTrack
-            </h1>
-            <p className="text-gray-500 text-sm">项目管理系统</p>
+            {/* 系统名称 + 副标题 */}
+            <div className="flex items-center justify-center gap-3 mb-1">
+              <h1 className="text-3xl font-bold text-gray-800">营盘 OS</h1>
+            </div>
+            <p className="text-gray-400 text-sm">小团队经营管理系统</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
@@ -161,13 +163,13 @@ export const LoginPage: React.FC = () => {
 
           <div className="mt-8 pt-6 border-t border-gray-200/50">
             <p className="text-center text-xs text-gray-500">
-              演示账号：admin / admin123
+              演示账号 admin / admin123
             </p>
           </div>
         </div>
 
         <p className="text-center mt-6 text-sm text-gray-500">
-          © 2026 ProTrack 项目管理系统. All rights reserved.
+          © 2026 营盘 OS. All rights reserved.
         </p>
       </div>
     </div>
