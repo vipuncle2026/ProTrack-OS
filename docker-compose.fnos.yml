@@ -2,17 +2,20 @@
 # ProTrack — 飞牛 NAS (fnOS) Docker Compose 部署
 # ============================================================
 # 使用方法：
-# 1. 将整个 protrack 项目文件夹上传到飞牛（非系统盘）
-# 2. 在飞牛文件管理中，右键文件夹 → 查看详细信息 → 复制原始路径
-#    例如：/vol2/1000/Docker/protrack
-# 3. 打开 Docker 管理 → 创建项目 → 选择路径为项目文件夹
-# 4. 等待构建完成（首次构建约 5-15 分钟）
+# 1. 在飞牛文件管理中新建文件夹 protrack
+# 2. 将此文件 + .env 放入该文件夹
+# 3. 打开 Docker 管理 → 创建项目 → 选择路径
+# 4. 等待拉取镜像并启动（首次约 1-3 分钟，取决于网速）
 # 5. 访问 http://飞牛IP:8088
+#
+# 更新方式：
+# GitHub 推送代码 → Actions 自动构建镜像 →
+# 飞牛 Docker 面板点"重建"即可拉取最新镜像
 # ============================================================
 
 services:
   backend:
-    build: ./backend
+    image: vipuncle2026/protrack-backend:latest
     container_name: protrack-backend
     environment:
       - SECRET_KEY=${SECRET_KEY:-protrack-change-me-in-production-use-env-file}
@@ -24,7 +27,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    build: .
+    image: vipuncle2026/protrack-frontend:latest
     container_name: protrack-frontend
     ports:
       - "${PORT:-8088}:80"
