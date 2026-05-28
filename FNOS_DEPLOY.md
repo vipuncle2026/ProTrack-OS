@@ -55,7 +55,7 @@ SQLite 数据库保存在 `protrack/data/` 目录下，通过 volume 映射持�
 
 ## 更新方法
 
-GitHub 推送代码后，Actions 自动构建新镜像推送到 Docker Hub。然后在飞牛上：
+GitHub 推送代码后，Actions 自动构建新镜像推送到 GitHub Container Registry (ghcr.io)。然后在飞牛上：
 
 1. **Docker 管理** → **项目** → 找到 `protrack`
 2. 点 **重建**（或先停止 → 再启动）
@@ -66,7 +66,7 @@ GitHub 推送代码后，Actions 自动构建新镜像推送到 Docker Hub。然
 ## 常见问题
 
 **Q: 拉取镜像失败？**
-A: 检查 Docker 镜像仓库设置是否已换国内源。或 SSH 进飞牛手动 `docker pull vipuncle2026/protrack-backend:latest` 看报错。
+A: 检查 Docker 镜像仓库设置是否已换国内源。ghcr.io 国内可能需要代理，或 SSH 进飞牛手动 `docker pull ghcr.io/vipuncle2026/protrack-backend:latest` 看报错。
 
 **Q: 端口冲突？**
 A: 改 `.env` 里的 `PORT`，或者直接改 `docker-compose.yml` 的 `8088:80` 左边数字。

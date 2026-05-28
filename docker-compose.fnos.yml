@@ -15,7 +15,7 @@
 
 services:
   backend:
-    image: appnew/protrack-backend:latest
+    image: ghcr.io/vipuncle2026/protrack-backend:latest
     container_name: protrack-backend
     env_file:
       - .env
@@ -26,7 +26,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: appnew/protrack-frontend:latest
+    image: ghcr.io/vipuncle2026/protrack-frontend:latest
     container_name: protrack-frontend
     env_file:
       - .env
