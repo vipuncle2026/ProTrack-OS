@@ -17,10 +17,9 @@ services:
   backend:
     image: vipuncle8848/protrack-backend:latest
     container_name: protrack-backend
+    env_file:
+      - .env
     environment:
-      - SECRET_KEY=${SECRET_KEY:-protrack-change-me-in-production-use-env-file}
-      - SEED_DATA=${SEED_DATA:-admin_only}
-      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-*}
       - SQLITE_DB_PATH=/app/data/protrack.db
     volumes:
       - ./data:/app/data
@@ -29,6 +28,8 @@ services:
   frontend:
     image: vipuncle8848/protrack-frontend:latest
     container_name: protrack-frontend
+    env_file:
+      - .env
     ports:
       - "${PORT:-8088}:80"
     depends_on:
